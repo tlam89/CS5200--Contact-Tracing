@@ -1,0 +1,30 @@
+INSERT INTO `Exposure`(`ExposureId`,`Level`,`Description`) VALUES (1,'very low','I have not contacted anyone for the past 14 days');
+INSERT INTO `Exposure`(`ExposureId`,`Level`,`Description`) VALUES (2,'Low','social distance is greater than 6 feets');
+INSERT INTO `Exposure`(`ExposureId`,`Level`,`Description`) VALUES (3,'moderate','Usually travel by public transportations');
+INSERT INTO `Exposure`(`ExposureId`,`Level`,`Description`) VALUES (4,'High','Have medical conditions and high age.');
+INSERT INTO `Exposure`(`ExposureId`,`Level`,`Description`) VALUES (5,'Very High','Frequently gather in a large group in public');
+
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (1,'Dry cough');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (2,'Fever');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (3,'Runny nose');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (4,'Exhaustion');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (5,'Aches');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (6,'Loss Sense Of Smell');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (7,'Difficult Breathing');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (8,'Chest Pain');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (9,'Nausea');
+INSERT INTO `Symptom`(`SymptomId`,`Description`) VALUES (10,'Headaches');
+
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (1,'Triaged');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (2,'Assigned');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (3,'Notified');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (4,'InterviewScheduled');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (5,'Interviewed');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (6,'TestScheduled');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (7,'PendingTestResults');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (8,'PositiveTest');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (9,'NegativeTest');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (10,'ReferredToSupportServices');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (11,'ReferredToMedicalProvider');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (12,'Closed');
+INSERT INTO `Status`(`StatusId`,`Description`) VALUES (13,'DoNotContact');

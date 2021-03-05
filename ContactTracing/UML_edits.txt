@@ -1,0 +1,25 @@
+Suggested changes:
+
+1. Manager should be called CaseManager
+2. Remove Interviewer, this is the same as a case manager
+3. Manager (OfficeId), LabTech(TestingCenterId)
+4. Employees do not have TestingCenters, they MAY work at a testing center
+5. TestingCenters would exist without Employees, this is an association
+6. Employees MAY also work at an Office, we're missing this association
+7. Offices do not have TestingCenters, they MAY share the same Address
+8. Interviews do not take place at TestingCenters
+9. Test would exist without TestingCenter, this is an association
+10. The aggregate relationship between TestingCenter and Address is incorrect
+11. Contact TAKES 0..* Tests
+12. Contact HAS 0..* Interview
+13. An Employee CONDUCTS 0..* Interviews, we're missing this relationship
+14. Interviews may be held in 0..* Office, we're missing this relationship
+15. An Exposure record would exist without a Contact, this is an association
+16. A ContactStatus record would not exist without a Contact, this is composition
+17. A ContactTravel record would not exist without a Contact, this is composition
+18. A ContactSymptom record would not exist without a Contact, this is composition
+19. A ContactTravel OCCURS AT 0..* Address
+20. I don't know how we would represent generalization in Contact and Employee, lets talk about this together.
+
+
+
