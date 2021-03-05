@@ -1,0 +1,69 @@
+Contact Notification Queries
+
+Use Case: Enable automated notification to contacts who opt-in to being notified
+
+Query:
+	SELECT FirstName, LastName, Email 
+	FROM ContactStatus 
+	WHERE CaseId IN (SELECT ContactId FROM Contact WHERE PreferredContact LIKE 'Email');
+
+--> Output will be a list of contacts who have given consent to be notified and the Email to use for notification
+
+	SELECT FirstName, LastName, PhoneNumber 
+	FROM ContactStatus 
+	WHERE CaseId IN (SELECT ContactId FROM Contact WHERE PreferredContact LIKE 'Phone');
+
+--> Output will be a list of contacts who have given consent to be notified and the Phone to use for notification
+
+Use Case: Enable notified contacts to voluntarily report relevant demographic data
+
+--> Input will be a ContactId, attribute:value with answers to relevent data
+
+Query:
+	UPDATE Contacts
+	SET attribute = value
+	WHERE ContactId = [input];
+
+Use Case: Allow messaging to be tailored to the likelihood of exposure based on the risk level
+
+Query:	
+	SELECT * 
+	FROM Contact 
+	WHERE StatusId = (SELECT StatusId FROM Status WHERE Description LIKE 'Triaged')
+	AND ExposureId = (SELECT ExposureId FROM Exposure WHERE Level LIKE 'Very High');
+
+--> output will be a list of contacts who are triaged and have had high exposure	
+
+Use Case: Allow messaging to include links to resources and services to support self-quarantine period, and provide next steps
+
+Query:
+
+
+Use Case: Fully automate enrollment of contacts into follow-up and monitoring module of health department information system/case management tool (upon contact consent),
+
+--> input is a ContactId belonging to triaged contacts from whom a pre-interview screening was recieved
+
+Query:
+	INSERT INTO ContactStatus (ContactId, StatusId, EmployeeId, SelfQuarantined, Date, SelfReportedStatus)
+	VALUES ([input information as reported by contact],TRUE);
+
+	UPDATE Contacts
+	SET StatusId = (SELECT StatusId FROM Status WHERE Description LIKE 'InterviewScheduled')
+	WHERE ContactId  = [input];
+
+Use Case: instruct contact on follow-up and monitoring process, and direct them to health department’s electronic platform for self-reporting
+
+Query:
+
+__________________________
+Contact Monitoring Queries
+
+Use Case: Enable automated dispatch of reminders to elicited contacts for 14 days and provides link to platform to electronically self-report symptoms
+
+Query:
+
+Use Case: Enable automatic prioritization and classification of selfreported symptom and temperature data, immediate contact notification to suggest testing, and immediate health department notification to provide support to the contact 
+
+Query:
+
+Use Case: Be able to receive authentication of patient convalescence from health department to clear case status 
